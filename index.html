@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Страница</title>
+<meta charset="utf-8">
+</head>
+<body>
+
+	<script>
+	
+var form = document.querySelector('form');
+form.onsubmit = function ()
+  {
+  var text = form.text;
+  text.value = '<p>' + text.value + '</p>';
+  text.value = text.value.replace(/\n/g, '</p><p>');
+  };
+
+</script>
+	
+<p>Авторизация:</p>
+<form action="controller.php" method="post">
+  <input name="login" placeholder="Логин">
+  <input type="password" name="password" placeholder="Пароль">
+  <input type="submit" value="Войти">
+</form>
+
+</body>
+</html>
